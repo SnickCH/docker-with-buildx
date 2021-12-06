@@ -1,6 +1,6 @@
 # docker image with buildx installed - weekly updated
 
-A DIND (Docker in Docker) image with with buildx to build multi platform docker images. 
+A DIND (Docker in Docker) image with buildx to build multi platform docker images. 
 Difference to the main image
 - Weekly updated (gitlab pipeline)
 - I try to use the newest version of buildx for the stable tag (at the moment 0.7.1) https://github.com/docker/buildx/releases/
