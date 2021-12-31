@@ -1,18 +1,8 @@
-ARG BUILDX_VERSION=0.7.1
 ARG DOCKER_VERSION=latest
+ARG BUILDX_VERSION=latest
 
-FROM alpine AS fetcher
+FROM docker/buildx-bin:${BUILDX_VERSION} as buildx
 
-RUN apk add curl
-
-ARG BUILDX_VERSION
-RUN curl -L \
-  --output /docker-buildx \
-  "https://github.com/docker/buildx/releases/download/v${BUILDX_VERSION}/buildx-v${BUILDX_VERSION}.linux-amd64"
-
-RUN chmod a+x /docker-buildx
-
-ARG DOCKER_VERSION
 FROM docker:${DOCKER_VERSION}
 
-COPY --from=fetcher /docker-buildx /usr/lib/docker/cli-plugins/docker-buildx
+COPY --from=buildx /buildx /usr/lib/docker/cli-plugins/docker-buildx
