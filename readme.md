@@ -12,7 +12,7 @@ Key features
 
 ## Docker image and tags
 
-In addition to the "latest" tag (amd64 and arm64), there are older tags available. Please check the docker hub site of the project for the tags if you need older one
+Please check the docker hub site of the project for the tags if you need older versions
 
 https://hub.docker.com/r/snickch/buildx
 
@@ -54,7 +54,7 @@ build:
     - docker version
     - docker login -u $dhub_user -p $dhub_password
     - docker buildx create --use
-    - docker buildx build --push --platform linux/arm64,linux/amd64,linux/arm/v7,linux/arm/v6 --tag $CI_REGISTRY .
+    - docker buildx build --push --platform linux/arm64,linux/amd64,linux/arm/v7,linux/arm/v6 --tag $CI_REGISTRY:$CI_COMMIT_REF_NAME .
 ```
 File: Dockerfile
 ```
