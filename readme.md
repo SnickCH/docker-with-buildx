@@ -1,4 +1,4 @@
-# Docker image with buildx installed - weekly updated
+# Docker image with buildx (amd64,arm64) installed - weekly updated
 
 A DIND (Docker in Docker) image with buildx to build multi platform docker images. 
 
@@ -6,10 +6,11 @@ Key features
 - Weekly updates for the latest version of buildx: I try to use the newest version of buildx for the "latest" tag https://github.com/docker/buildx/releases/
 - Different versions are available if you need older ones
 - I will add examples on how to get startet with Git Lab
+- amd64 (tested) and arm64 (not tested)
 
 ## Docker image and tags
 
-In addition to the "latest" tag, there are older tags available. Please check the docker hub site of the project for the tags if you need older one
+In addition to the "latest" tag (amd64 and arm64), there are older tags available. Please check the docker hub site of the project for the tags if you need older one
 
 https://hub.docker.com/r/snickch/buildx
 
