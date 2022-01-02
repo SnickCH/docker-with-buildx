@@ -2,6 +2,8 @@
 
 A DIND (Docker in Docker) image with buildx to build multi platform docker images. 
 
+Documentation: https://github.com/SnickCH/docker-with-buildx
+
 Key features
 - Weekly updates for the latest version of buildx: I try to use the newest version of buildx for the "latest" tag https://github.com/docker/buildx/releases/
 - Different versions are available if you need older ones
