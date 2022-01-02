@@ -11,7 +11,7 @@ Key features
 
 In addition to the "latest" tag, there are older tags available. Please check the docker hub site of the project for the tags if you need older one
 
-https://hub.docker.com/repository/docker/snickch/buildx/general
+https://hub.docker.com/r/snickch/buildx
 
 ```bash
 docker pull snickch/buildx:latest
