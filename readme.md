@@ -14,7 +14,7 @@ Key features
 
 Please check the docker hub site of the project for the tags if you need older versions
 
-https://hub.docker.com/r/snickch/buildx
+https://hub.docker.com/r/snickch/buildx/tags
 
 ```bash
 docker pull snickch/buildx:latest
