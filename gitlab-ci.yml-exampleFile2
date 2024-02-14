@@ -1,0 +1,27 @@
+#This is an example document of the ".gitlab-ci.yml" file in gitlab for an automated pipeline. 
+#You have to edit atleast the last line with your user, repository and tag that you want to have for your image.
+#The variables $dhub_user $dhub_password have to be configured in gitlab for the dockerhub login to work. 
+#The tag of the image will be your branch name of the project. You could replace the "user/repository"  with a variable
+
+
+image: snickch/buildx:latest
+
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+
+services:
+- name: docker:dind
+  alias: thedockerhost
+
+build:
+  stage: build
+
+  script:
+    - docker version
+    - docker login -u $dhub_user -p $dhub_password
+    - docker buildx create --use
+    - docker buildx build --push --platform linux/amd64,linux/arm64 --tag user/repository:$CI_COMMIT_REF_NAME .
+
+#include:
+#- template: Security/Container-Scanning.gitlab-ci.yml
